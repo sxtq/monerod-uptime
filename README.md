@@ -11,7 +11,7 @@ so you need 2 users on the system
 the monerod user for running the node and the root user for restarting tor or rebooting if the node goes offline
 setup.sh handles keeping the monerod node itself online and uptime.sh keeps tor online.
 
-I would make a directory names xmrnode in the home directory of the monerod user.
+I would move xmrnode to the home directory of the monerod user path: /home/monerod/xmrnode.
 Keep all files in this xmrnode directory and add the following crontabs to the root and monerod users crontab.
 
 Monerod users crontab:
