@@ -1,5 +1,5 @@
 # monero-starter
-Not really for public use
+Not really for public use.
 The scripts here will make sure monerod is online and uptodate, they also will make sure tor stays online limiting downtime. 
 The scripts will restart tor and reboot the server if needed.
 
