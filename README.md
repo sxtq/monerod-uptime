@@ -1,9 +1,9 @@
 # monero-starter
 Not really for public use.
 The scripts here will make sure monerod is online and uptodate, they also will make sure tor stays online limiting downtime. 
-The scripts will restart tor and reboot the server if needed.
+The scripts will restart tor and reboot the server if needed. You should follow my recommended setup but it can be ran however you want just make sure you edit all the variables in the scripts to match your setup.
 
-# Setup
+# Recommended Setup
 starter.sh and updater.sh can be ran by the node user, so monerod
 uptime.sh needs to be ran by the root user so it can restart services
 
