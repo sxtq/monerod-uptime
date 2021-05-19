@@ -6,7 +6,7 @@ The scripts will restart tor and reboot the server if needed. You should follow 
 # Recommended Setup
 This was created on debian so stick to ubuntu based distros or you will need to modify the script
 
-NOTE: This requires the following dependencies: 
+NOTE: This requires the following dependencies
 ```
 sudo apt install tmux wget gnupg curl
 ```
