@@ -6,12 +6,10 @@ The scripts will restart tor and reboot the server if needed. You should follow 
 # Recommended Setup
 This was created on debian so stick to ubuntu based distros or you will need to modify the script
 
-NOTE: This requires the following dependencies 
-1. tmux
-2. wget
-3. gnupg (gpg)
-4. curl
-
+NOTE: This requires the following dependencies: 
+```
+sudo apt install tmux wget gnupg curl
+```
 1. Create a new user named monerod. (This user should not be sudo)
 2. Move the xmrnode directory to the monerod users home directory and make sure monerod user owns all the files
 3. Edit the startup.sh and uptime.sh script with the correct api key for pushover and correct sites with ports in the vars (Also edit other vars if needed)
