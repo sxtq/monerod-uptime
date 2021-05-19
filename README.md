@@ -4,8 +4,13 @@ The scripts here will make sure monerod is online and uptodate, they also will m
 The scripts will restart tor and reboot the server if needed. You should follow my recommended setup but it can be ran however you want just make sure you edit all the variables in the scripts to match your setup.
 
 # Recommended Setup
-starter.sh and updater.sh can be ran by the node user, so monerod
-uptime.sh needs to be ran by the root user so it can restart services
+This was created on debian so stick to ubuntu based distros or you will need to modify the script
+
+NOTE: This requires the following dependencies 
+1. tmux
+2. wget
+3. gnupg (gpg)
+4. curl
 
 1. Create a new user named monerod. (This user should not be sudo)
 2. Move the xmrnode directory to the monerod users home directory and make sure monerod user owns all the files
