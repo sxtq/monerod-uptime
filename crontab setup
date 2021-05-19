@@ -1,0 +1,5 @@
+New user "monerod" crontab
+* * * * * /home/monerod/xmrnode/starter.sh >/dev/null 2>&1
+
+Root user crontab
+* * * * * flock -n /root/active.tmp /root/uptime.sh >/dev/null 2>&1
