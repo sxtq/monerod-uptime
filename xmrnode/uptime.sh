@@ -127,10 +127,8 @@ sitecheck () {
       tor_check=pass
     else
       print "Failed bad connection over tor" red
-      send "XMR Node" "Failed bad connection over tor"
       sleep 2m
       if timeout 1m curl -IL --socks5-hostname 127.0.0.1:9050 http://"$tor_site"/get_info ; then
-        send "XMR Node" "Rerun good connection over tor"
         print "Rerun good connection over tor" green
         tor_check=pass
       else
@@ -147,10 +145,8 @@ sitecheck () {
       clear_check=pass
     else
       print "Failed bad connection over clearnet" red
-      send "XMR Node" "Failed bad connection over clearnet"
       sleep 2m
       if timeout 1m curl -IL http://"$clear_site"/get_info ; then
-        send "XMR Node" "Rerun good connection over clearnet"
         print "Rerun good connection over clearnet" green
         clear_check=pass
       else
