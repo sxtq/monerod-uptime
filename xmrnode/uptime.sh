@@ -33,6 +33,7 @@ print () {
 
 recheck () {
   if [  -f "$dir"/recheck.tmp ] ; then
+    sleep 2m
     checking_loop=1
     while [ "$checking_loop" = "1" ] ; do
       print "Rechecking after reboot" yellow
@@ -92,7 +93,7 @@ rescue () {
     send "XMR Node" "Rescue rebooting server"
     rm "$dir"/active.tmp
     touch "$dir"/recheck.tmp
-    sudo shutdown -r 0
+    sudo shutdown -r now
     exit 1
   elif [ "$tor_check" = "fail" ] && [ "$clear_check" = "pass" ]; then
     print "Rescue attempting tor refresh (2)" yellow
@@ -106,7 +107,7 @@ rescue () {
       send "XMR Node" "Resuce bad connection over tor rebooting"
       rm "$dir"/active.tmp
       touch "$dir"/recheck.tmp
-      sudo shutdown -r 0
+      sudo shutdown -r now
       exit 1
     fi
   elif [ "$tor_check" = "pass" ] && [ "$clear_check" = "fail" ]; then
@@ -114,7 +115,7 @@ rescue () {
     send "XMR Node" "Rescue rebooting server"
     rm "$dir"/active.tmp
     touch "$dir"/recheck.tmp
-    sudo shutdown -r 0
+    sudo shutdown -r now
     exit 1
   fi
 }
