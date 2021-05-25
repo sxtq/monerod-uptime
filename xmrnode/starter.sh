@@ -113,5 +113,11 @@ starter () {
   fi
 }
 
+pid_count=$(pgrep starter.sh | wc -l)
+if [ "$pid_count" -gt "2" ]; then
+  print "Starter script is already running exiting" yellow
+  exit 1
+fi
+
 starter
 checkupdate
