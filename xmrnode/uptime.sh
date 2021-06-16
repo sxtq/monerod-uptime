@@ -159,8 +159,8 @@ pid_count=$(pgrep uptime.sh | wc -l)
 if [ "$pid_count" -gt "2" ]; then
   print "Uptime script is already running exiting" yellow
   exit 1
+else
+  recheck
+  sitecheck
+  usage
 fi
-
-recheck
-sitecheck
-usage
