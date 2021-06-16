@@ -17,7 +17,7 @@ sudo apt install tmux wget gnupg curl
 5. Add the first crontab to the Monerod users crontabs
 6. Add the second crontab to the root users crontabs 
 
-Monerod users crontab:
+Monerod users crontab: (Edit the path if needed)
 ```
 * * * * * cd /home/monerod/xmrnode && /home/monerod/xmrnode/starter.sh >/dev/null 2>&1
 ```
