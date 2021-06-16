@@ -1,15 +1,7 @@
 #!/bin/bash
 
-dir=/home/monerod/xmrnode
-monerod_dir="$dir"/xmr
-backup_monerod_dir="$dir"/xmr.bk
-blockchain_dir=/home/monerod/.bitmonero
+. config
 log="$dir"/starter.log
-rpcport=18087
-
-APP_TOKEN=""
-USER_TOKEN=""
-URL="https://api.pushover.net/1/messages.json"
 
 send () {
   date=$(date)
