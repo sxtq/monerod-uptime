@@ -12,7 +12,7 @@ sudo apt install tmux wget gnupg curl
 ```
 1. Create a new user named monerod. (This user should not be sudo)
 2. Move the xmrnode directory to the monerod users home directory and make sure monerod user owns all the files.
-3. Edit the startup.sh and uptime.sh script with the correct api key for pushover and correct urls with ports in the vars (Also edit other vars if needed)
+3. Edit the config file with the correct api key for pushover and correct urls with ports in the vars (Also edit other vars if needed)
 4. Create .bitmonero directory in the home directory of the monerod user, then add the given config file inside the .bitmonero directory (bitmonero.conf)
 5. Add the first crontab to the Monerod users crontabs
 6. Add the second crontab to the root users crontabs 
