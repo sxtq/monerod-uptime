@@ -1,6 +1,6 @@
 # monero-starter
 Not really for public use.
-The scripts here will make sure monerod is online and uptodate, they also will make sure tor stays online limiting downtime. 
+The scripts here will make sure monerod is online and updated, they also will make sure tor stays online limiting downtime. 
 The scripts will restart tor and reboot the server if needed. You should follow my recommended setup but it can be ran however you want just make sure you edit all the variables in the scripts to match your setup.
 
 # Recommended Setup
