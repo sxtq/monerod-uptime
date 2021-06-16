@@ -1,16 +1,7 @@
 #!/bin/bash
 
-dir=/home/monerod/xmrnode
-tor_site=
-clear_site=
+. config
 log="$dir"/uptime.log
-tor=1
-clear=1
-run_rescue=1
-
-APP_TOKEN=""
-USER_TOKEN=""
-URL="https://api.pushover.net/1/messages.json"
 
 send () {
   date=$(date)
