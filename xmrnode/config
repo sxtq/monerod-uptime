@@ -1,0 +1,61 @@
+###################################################################################################
+#PUSHOVER CONFIG
+
+APP_TOKEN=""
+USER_TOKEN=""
+URL="https://api.pushover.net/1/messages.json"
+
+###################################################################################################
+#MONERO UPDATER CONFIG
+#Version 1.3.8
+#Name of directory that contains monero software files (make it whatever you want)
+directory_name="xmr"
+#version=1 for 64-bit, 2 for arm7, 3 for arm8 and 4, for android arm8, 5 for linux32 or version=$(uname -m) for auto detect
+version=$(uname -m)
+directory=$(printf "%q\n" "$(pwd)" | sed 's/\/\<'$directory_name'\>//g')
+#To set manually use this example working_directory=/home/myUser/xmr
+working_directory="$directory/$directory_name"
+#This is where the hashes.txt, binary file and sigining key will be stored while the script is running.
+temp_directory="$directory/tmp-xmr-483"
+#Change this to 1 to run in offline mode
+offline=0
+#Change this to 0 to not backup any files (If 0 script wont touch wallet files AT ALL)type=1 #1 for CLI 2 for GUI
+backup=1
+#Match the fingerprint below with the one here
+#https://web.getmonero.org/resources/user-guides/verification-allos-advanced.html#22-verify-signing-key
+output_fingerprint="81AC 591F E9C4 B65C 5806  AFC3 F0AF 4D46 2A0B DF92"
+#Keyfile download URL
+key_url=https://raw.githubusercontent.com/monero-project/monero/master/utils/gpg_keys/binaryfate.asc
+#Key file name (Used to help the script locate the file)
+key_name=binaryfate.asc
+#Hash file download URL
+hash_url=https://www.getmonero.org/downloads/hashes.txt
+#Hash file name (Used to help the script locate the file)
+hash_file=hashes.txt
+#Download server URL
+url=https://downloads.getmonero.org
+###################################################################################################
+
+#GENERAL VARS
+#What directory and path is this file inside of (Change username if needed) [Yes i could have just used pwd for this but no]
+dir=/home/monerod/xmrnode
+#Your Monerod dir that is active
+monerod_dir="$dir"/"$directory_name"
+#Your backup dir for old version of monerod after update
+backup_monerod_dir="$dir"/xmr.bk
+#Where the blockchain is stored
+blockchain_dir=/home/monerod/.bitmonero
+#Monerod RPC Port
+rpcport=18087
+#Tor site URL example tor_site=mxcd4577fldb3ppzy7obmmhnu3tf57gbcbd4qhwr2kxyjj2qi3dnbfqd.onion:18081
+tor_site=mxcd4577fldb3ppzy7obmmhnu3tf57gbcbd4qhwr2kxyjj2qi3dnbfqd.onion:18081
+#Clearnet URL example clear_site=xmr.fail:18081
+clear_site=xmr.fail:18081
+#Check connection over tor if set to 1, if 0 it wont check for tor connection
+tor=1
+#Check connection over clearnet if set to 1, if 0 it wont check for clearnet connection
+clear=1
+#Try to save the node if set to 1, if 0 the script will just alert you and wont try to fix the issue
+run_rescue=1
+
+###################################################################################################
