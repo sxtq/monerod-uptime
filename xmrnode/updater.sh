@@ -1,25 +1,6 @@
 #!/bin/bash
 
-#Version 1.3.8
-directory_name="xmr" #Name of directory that contains monero software files (make it whatever you want)
-version=$(uname -m) #version=1 for 64-bit, 2 for arm7, 3 for arm8 and 4, for android arm8, 5 for linux32 or version=$(uname -m) for auto detect
-directory=$(printf "%q\n" "$(pwd)" | sed 's/\/\<'$directory_name'\>//g')
-working_directory="$directory/$directory_name" #To set manually use this example working_directory=/home/myUser/xmr
-temp_directory="$directory/tmp-xmr-483" #This is where the hashes.txt, binary file and sigining key will be stored while the script is running.
-offline=0 #Change this to 1 to run in offline mode
-backup=1 #Change this to 0 to not backup any files (If 0 script wont touch wallet files AT ALL)
-type=1 #1 for CLI 2 for GUI
-
-#Match the fingerprint below with the one here
-#https://web.getmonero.org/resources/user-guides/verification-allos-advanced.html#22-verify-signing-key
-output_fingerprint="81AC 591F E9C4 B65C 5806  AFC3 F0AF 4D46 2A0B DF92"
-key_url=https://raw.githubusercontent.com/monero-project/monero/master/utils/gpg_keys/binaryfate.asc #Keyfile download URL
-key_name=binaryfate.asc #Key file name (Used to help the script locate the file)
-hash_url=https://www.getmonero.org/downloads/hashes.txt #Hash file download URL
-hash_file=hashes.txt #Hash file name (Used to help the script locate the file)
-
-#Download server URL
-url=https://downloads.getmonero.org
+. config
 
 while test "$#" -gt 0; do
   case "$1" in
