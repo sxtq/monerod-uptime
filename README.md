@@ -19,7 +19,7 @@ sudo apt install tmux wget gnupg curl
 
 Monerod users crontab:
 ```
-* * * * * /home/monerod/xmrnode/starter.sh >/dev/null 2>&1
+* * * * * cd /home/monerod/xmrnode && /home/monerod/xmrnode/starter.sh >/dev/null 2>&1
 ```
 Root users crontab:
 ```
