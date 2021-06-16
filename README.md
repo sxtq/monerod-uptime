@@ -23,5 +23,5 @@ Monerod users crontab:
 ```
 Root users crontab:
 ```
-* * * * * flock -n /home/monerod/xmrnode/active.tmp /home/monerod/xmrnode/uptime.sh >/dev/null 2>&1
+* * * * * cd /home/monerod/xmrnode && /home/monerod/xmrnode/uptime.sh >/dev/null 2>&1
 ```
